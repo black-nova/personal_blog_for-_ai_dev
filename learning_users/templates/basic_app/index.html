@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %}
+{% load static %}
+{% block body_block %}
+<style>
+
+
+</style>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<div class="jumboron">
+  <br>
+  <h1 style="color: white;position: absolute;">Adwaitt Pandya</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+        <!-- {{task_form}} to display all -->
+        {{task_form.media|safe}}
+        {{ task_form.title|safe }}
+         <!-- to display particular field-->
+         <br>
+        <button style="border-radius: 10px;background-color: black;color: beige;" type="submit">SUBMIT</button>
+      {% endif %}
+    </form>
+    <br>
+    <br>
+    <div class="contain" style="word-wrap: break-word;
+    ">
+      <ol style="list-style: none;color: black;">
+        {% for task in tasks %}
+        <br>
+            <li>
+               
+
+                    {% if task.heading == True %}
+                    <h2>{{task.title|safe}}</h2>
+                {% else %}
+                    {{task.title|safe}}
+                {% endif %} 
+
+
+
+
+
+
+
+
+
+                    
+
+
+                {% if user.is_authenticated %}
+                | <a href="{% url "update_task" task.id %}">Update</a> | <a href="{% url "delete_task" task.id %}">Delete</a> 
+                {% endif %}
+            </li>
+         <!---   <br> -->
+        {% endfor %}
+    </ol>
+    </div>
+
+
+</div>
+{% endblock %}

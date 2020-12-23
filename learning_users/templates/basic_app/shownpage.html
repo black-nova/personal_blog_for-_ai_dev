@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %}
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block body_block %}
+    <img src="{% static "{{cooll.as_p}}" %}" alt="{{cooll}}">
+    {% endblock %}
+</html>

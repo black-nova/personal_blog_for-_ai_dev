@@ -1,0 +1,37 @@
+body {
+    background-image: linear-gradient(to bottom right, rgb(38, 38, 38), rgb(77, 255, 255));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.img1 {
+    float: right;
+    width: 50%;
+    height: auto;
+}
+
+
+.img2 {
+  animation: rotation 10s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.img3 {
+  animation: rotation 10s infinite linear;
+  animation-direction: reverse;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

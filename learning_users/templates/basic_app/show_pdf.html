@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+{% block body_block %}
+
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 0 10px;
+    }
+    
+    /* Remove extra left and right margins, due to padding */
+    .row {margin: 0 -5px;}
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(9px);
+    text-align: left;
+    }
+    input[type="text"], textarea {
+      font-weight: bolder;
+     background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(9px);
+    text-align: left;
+}
+    </style>
+
+
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% if user.is_authenticated %}
+      <!-- {{task_form}} to display all -->
+      {{ task_form.title|safe }}
+       <!-- to display particular field-->
+       <br>
+      <button style="border-radius: 10px;background-color: black;color: beige;" type="submit">SUBMIT</button>
+    {% endif %}
+  </form>
+
+  <div class="contain" style="word-wrap: break-word;position: absolute;">
+    <ol style="list-style: none;color: black;">
+      {% for task in tasks %}
+          <li>
+            
+            
+
+
+            
+<h1 style="color:white; left: 0%;">{{task.title|safe}}</h1>        
+    
+
+              {% if user.is_authenticated %}
+              | <a href="{% url "update_task2" task.id %}">Update</a> | <a href="{% url "delete_task2" task.id %}">Delete</a> 
+              {% endif %}
+          </li>
+        <!---  <br> -->
+      {% endfor %}
+  </ol>
+  </div>
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+{%for item in list%}
+
+<br>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+
+        <form action="{% url 'shownpdf' %}" method="post">
+            {% csrf_token %}
+            <label for="password"></label>
+            <h3><b> {{item}}</b></h3>
+            
+           
+            <input type="hidden" style="border: none;" type="text" id="password" name="password" value="{{item}}">
+            <br>
+            <br>
+            <input style="border-radius: 10px;background-color: black;color: beige;" type="submit" name="" value="show pdf">
+            <br>
+            </form>
+            <br>
+         {% if user.is_authenticated %}
+          <form action="{% url 'del_pdf' %}" method="post">
+            {% csrf_token %}
+            <label for="password"></label>
+            <h3><b>{{item}}</b></h3>
+            
+            
+            <input type="hidden" style="border: none;" type="text" id='password' name="password" value="{{item}}">
+            <br>
+            <br>
+            <input style="border-radius: 10px;background-color: black;color: beige;" type="submit" name="" value="Delete">
+            </form>
+            <br>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <form action="{% url 'rename_pdf' %}" method="POST">
+              {% csrf_token %}
+              <label for="renamer"></label>
+              <input type="hidden" type="text" name="renamer" id="renamer"value='{{item}}'>
+              <label for="renamed"> Rename:</label>
+              <input type="text" name="renamed" id="renamed">
+              <input style="background-color: black;color: white;border-radius: 10px;" type="submit" value="Rename">
+            </form>
+            {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+{% endfor %}
+{% endblock %}
+    
+</body>
+</html>

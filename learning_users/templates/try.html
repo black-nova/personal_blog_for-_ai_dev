@@ -1,0 +1,204 @@
+              <!----  {% else %}
+                    {{task.title}}
+                {% endif %} --->
+
+
+
+
+
+                
+          <!----  {% else %}
+                {{task.title}}
+            {% endif %} --->
+
+
+
+
+
+
+                         <!----  {% if task.heading == True %}
+                    <h2>{{task.title}} </h2>
+                {% else %}
+                    {{task.title}}
+                {% endif %} -->
+
+
+
+
+
+                {% if task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == False %}
+                <h1>{{task.title|safe}} </h1>
+            
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == False %}
+                <h1><b>{{task.title|safe}}</b> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == False %}
+                <h1><i>{{task.title|safe}}</i> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == True %}
+                <h1><u>{{task.title|safe}}</u> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == False %}
+                <h1><b><i>{{task.title|safe}}</i></b> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == True %}
+                <h1><i><u>{{task.title|safe}}</u></i> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == True %}
+                <h1><b><u>{{task.title|safe}}</u></b> </h1>
+
+                {% elif task.heading1 == True and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == True %}
+                <h1><b><i><u>{{task.title|safe}}</u></i></b> </h1>
+                {% endif %}
+
+
+
+
+
+
+                {% if task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == False %}
+                <h2>{{task.title|safe}} </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == False %}
+                <h2><b>{{task.title|safe}}</b> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == False %}
+                <h2><i>{{task.title|safe}}</i> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == True %}
+                <h2><u>{{task.title|safe}}</u> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == False %}
+                <h2><b><i>{{task.title|safe}}</i></b> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == True %}
+                <h2><i><u>{{task.title|safe}}</u></i> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == True %}
+                <h2><b><u>{{task.title|safe}}</u></b> </h2>
+                
+                {% elif task.heading1 == False and task.heading2 == True and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == True %}
+                <h2><b><i><u>{{task.title|safe}}</u></i></b> </h2>
+                {% endif %}
+
+
+
+
+
+
+{% if task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == False %}
+<h3>{{task.title|safe}} </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == False %}
+<h3><b>{{task.title|safe}}</b> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == False %}
+<h3><i>{{task.title|safe}}</i> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == True %}
+<h3><u>{{task.title|safe}}</u> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == False %}
+<h3><b><i>{{task.title|safe}}</i></b> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == True %}
+<h3><i><u>{{task.title|safe}}</u></i> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == True %}
+<h3><b><u>{{task.title|safe}}</u></b> </h3>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == True and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == True %}
+<h3><b><i><u>{{task.title|safe}}</u></i></b> </h3>
+{% endif %}
+
+
+
+
+
+{% if task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == False %}
+<h4>{{task.title|safe}} </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == False %}
+<h4><b>{{task.title|safe}}</b> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == False %}
+<h4><i>{{task.title|safe}}</i> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == True %}
+<h4><u>{{task.title|safe}}</u> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == False %}
+<h4><b><i>{{task.title|safe}}</i></b> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == True %}
+<h4><i><u>{{task.title|safe}}</u></i> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == True %}
+<h4><b><u>{{task.title|safe}}</u></b> </h4>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == True and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == True %}
+<h4><b><i><u>{{task.title|safe}}</u></i></b> </h4>
+{% endif %}
+
+
+
+
+
+
+{% if task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == False and task.italic == False and task.underline == False %}
+<h5>{{task.title|safe}} </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == True and task.italic == False and task.underline == False %}
+<h5><b>{{task.title|safe}}</b> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == False and task.italic == True and task.underline == False %}
+<h5><i>{{task.title|safe}}</i> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == False and task.italic == False and task.underline == True %}
+<h5><u>{{task.title|safe}}</u> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == True and task.italic == True and task.underline == False %}
+<h5><b><i>{{task.title|safe}}</i></b> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == False and task.italic == True and task.underline == True %}
+<h5><i><u>{{task.title|safe}}</u></i> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == True and task.italic == False and task.underline == True %}
+<h5><b><u>{{task.title|safe}}</u></b> </h5>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == True and  task.bold == True and task.italic == True and task.underline == True %}
+<h5><b><i><u>{{task.title|safe}}</u></i></b> </h5>
+{% endif %}
+
+
+
+
+{% if task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == False %}
+{{task.title|safe}} 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == False %}
+<b>{{task.title|safe}}</b> 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == False %}
+<i>{{task.title|safe}}</i> 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == False and task.underline == True %}
+<u>{{task.title|safe}}</u> 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == False %}
+<b><i>{{task.title|safe}}</i></b> 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == False and task.italic == True and task.underline == True %}
+<i><u>{{task.title|safe}}</u></i>
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == False and task.underline == True %}
+<b><u>{{task.title|safe}}</u></b> 
+
+{% elif task.heading1 == False and task.heading2 == False and task.heading3 == False and task.heading4 == False and task.heading5 == False and  task.bold == True and task.italic == True and task.underline == True %}
+<b><i><u>{{task.title|safe}}</u></i></b> 
+{% endif %}
+
+
+
+
+

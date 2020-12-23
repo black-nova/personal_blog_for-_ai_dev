@@ -1,0 +1,15 @@
+{% extends 'basic_app/base.html' %}
+
+{% block body_block %}
+Update Task - 
+
+
+<form method="post">
+    {% csrf_token %}
+    {{task_edit_form.media|safe}}
+    {{task_edit_form|safe}}
+
+    <button style="border-radius: 10px;background-color: black;color: beige;" type="submit">Update</button>
+</form>
+
+{% endblock %}
